@@ -7,6 +7,13 @@ import Nav from "./components/Nav.vue"
   <Nav></Nav>
   <router-view></router-view>
 </template>
-<style scoped>
-
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-y: scroll; /* Always show scrollbar */
+}
 </style>

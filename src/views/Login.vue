@@ -83,6 +83,8 @@ const login =() => {
 
 
 <template>
+  <body>
+    <div class="container">
 <h1>Create an Account</h1>
 <p><input type="text" placeholder="Email" v-model ="email"></p>
 <p><input type="password" placeholder="Password" v-model ="password"></p>
@@ -90,4 +92,22 @@ const login =() => {
 <p><button @click="register">Register</button></p>
 <p><button @click="login">Login</button></p>
 <p><button @click="signInWithGoogle">Sign in With Google</button></p>
+</div>
+
+</body>
 </template>
+
+<style scoped>
+body{
+  display: flex;
+  justify-content: center;
+  overflow-y: hidden;
+}
+.container{
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+</style>
