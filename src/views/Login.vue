@@ -10,6 +10,8 @@ const password = ref("");
 const errMsg = ref();
 const router = useRouter();
 const isLoggedIn = ref(false);
+const registerbox = ref(true);
+const loginbox = ref(false);
 
 
 // onMounted(() => {
@@ -85,13 +87,20 @@ const login =() => {
 <template>
   <body>
     <div class="container">
-<h1>Create an Account</h1>
+      <div class="toggle"><button v-bind:class="{
+    'toggleenabled': registerbox,
+    
+  }" @click="registerbox=true,loginbox=false">Register</button><button  v-bind:class="{
+    'toggleenabled': loginbox,
+    
+  }" @click="registerbox=false,loginbox=true">Login</button></div>
+      
 <p><input type="text" placeholder="Email" v-model ="email"></p>
 <p><input type="password" placeholder="Password" v-model ="password"></p>
 <p v-if="errMsg">{{ errMsg }}</p>
-<p><button @click="register">Register</button></p>
-<p><button @click="login">Login</button></p>
-<p><button @click="signInWithGoogle">Sign in With Google</button></p>
+<p><button class="loginbtn" v-if="registerbox" @click="register">Register</button></p>
+<p><button class="loginbtn" v-if="loginbox" @click="login">Login</button></p>
+<p><button class="google-btn" @click="signInWithGoogle"><img class="google" src="../images/google.svg" alt=""> Sign in With Google</button></p>
 </div>
 
 </body>
@@ -104,10 +113,48 @@ body{
   overflow-y: hidden;
 }
 .container{
-  height: 400px;
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 40px;
+  max-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.toggle button{
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  transition: all 0.2s;
+
+}
+.toggle{
+  margin-bottom: 20px;
+}
+.toggleenabled{
+  color: #C6D567;
+}
+input{
+  margin: 5px;
+  width: 300px;
+  padding: 10px;
+}
+.loginbtn{
+  padding: 8px 12px;
+  margin: 9px 0;
+}
+.google{
+  width: 20px;
+  padding-right: 8px;
+}
+.google-btn{
+  margin-top: 9px;
+display: flex;
+padding: 8px;
+align-items: center;
+justify-content: center;
+}
+
 </style>
