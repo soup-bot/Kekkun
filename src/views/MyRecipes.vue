@@ -20,6 +20,7 @@ onMounted(() => {
     }
   });
 });
+
 </script>
 
 
@@ -34,7 +35,7 @@ onMounted(() => {
 <input placeholder="INGREDIENTS" v-model ="ingredients" type="text">
 <input placeholder="INSTRUCTIONS" v-model ="instructions" type="text">
 <input type="file" accept="image/*" @change="handleImageUpload">
-<button @click="submitRecipe" class="submit"></button>
+<button @click="submitRecipe" class="submit">SUBMIT</button>
 </div>
 
 </body>
