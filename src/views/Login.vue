@@ -121,6 +121,7 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 .toggle button{
   background-color: transparent;
