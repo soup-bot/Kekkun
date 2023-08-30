@@ -6,6 +6,7 @@ import router from "../router";
 const isLoggedIn = ref(false);
 const userUID = ref(null);
 let auth;
+const showMobileMenu = ref (false);
 
 //check if user is logged in: to later hide/show login button and myrecipes button
 onMounted(()=> {
@@ -39,19 +40,23 @@ signOut(auth).then(()=>{
 <router-link active-class="active" to="/myrecipes" v-if="isLoggedIn">My Recipes</router-link>
 </div> -->
 
-<ul class="nav-menu">
-  <li class="nav-item"><router-link class="nav-link" active-class="active" to="/">Home</router-link></li>
-  <li class="nav-item"><router-link  class="nav-link" active-class="active" to="/about">About</router-link></li>
-  <li class="nav-item"><router-link class="nav-link" active-class="active" to="/recipes">Recipes</router-link></li>
-  <li class="nav-item"><router-link class="nav-link" active-class="active" to="/myrecipes" v-if="isLoggedIn">My Recipes</router-link></li>
+<img class="hamburger" src="../images/hamburger.svg" alt="" @click="showMobileMenu = !showMobileMenu">
+<!-- <div class="hamburger">  
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+ </div> -->
+ <div :class="{ active: showMobileMenu }" class="nav-menu">
+<ul>
+  <li class="nav-item"><router-link @click="showMobileMenu = !showMobileMenu" class="nav-link" active-class="active" to="/">Home</router-link></li>
+  <li class="nav-item"><router-link @click="showMobileMenu = !showMobileMenu" class="nav-link" active-class="active" to="/about">About</router-link></li>
+  <li class="nav-item"><router-link @click="showMobileMenu = !showMobileMenu" class="nav-link" active-class="active" to="/recipes">Recipes</router-link></li>
+  <li class="nav-item"><router-link @click="showMobileMenu = !showMobileMenu" class="nav-link" active-class="active" to="/myrecipes" v-if="isLoggedIn">My Recipes</router-link></li>
+  <li><router-link class="login-btn" @click="showMobileMenu = !showMobileMenu" active-class="active" to="/login" v-if="!isLoggedIn"><img class="login-icon" src="../images/login.svg" alt=""></router-link></li>
+  <li><button class="login-btn" @click="logout(); showMobileMenu = !showMobileMenu" v-if="isLoggedIn"><img class="login-icon" src="../images/logout.svg" alt=""></button></li>
 </ul>
+</div>
 
-
-
-
-<router-link class="login-btn" active-class="active" to="/login" v-if="!isLoggedIn"><img class="login-icon" src="../images/login.svg" alt=""></router-link>
-
-<button class="login-btn" @click="logout" v-if="isLoggedIn"><img class="login-icon" src="../images/logout.svg" alt=""></button>
 </div>
 </template>
 
@@ -60,16 +65,24 @@ signOut(auth).then(()=>{
 
 li{
   list-style: none;
+  transition: all 0.2s;
 
 }
 li a {
   text-decoration: none;
 }
 .nav-menu{
+  
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+}
+.nav-menu ul{
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 
@@ -78,14 +91,17 @@ li a {
   width: 130px;
 }
 .nav{
-  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  padding: 3px 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  z-index: 2;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.101);
 }
 a{
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
   font-size: 18px;
   padding: 20px;
 }
@@ -95,17 +111,74 @@ a{
 .login-btn{
   border: none;
   background-color: transparent;
+  filter: invert(77%) sepia(46%) saturate(443%) hue-rotate(24deg) brightness(102%) contrast(84%);
+  transition: all 0.3s;
+  
 }
 .login-icon{
   width: 30px;
   transition: all 0.15s;
 }
 .login-icon:hover{
-  filter: invert(77%) sepia(46%) saturate(443%) hue-rotate(24deg) brightness(102%) contrast(84%);
+  scale: 1.3;
 }
-
+.nav-menu li:hover{
+  scale: 1.1;
+}
 .active{
   color: #C6D567;
 }
 
+.hamburger{
+  position: absolute;
+  top: 2.7rem;
+  right: 1.6rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 26px;
+  overflow: visible;
+  display: none;
+  
+}
+.bar{
+border-radius: 5px;
+width: 100%;
+height: 4px;
+background-color: black;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .nav{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .nav-menu{
+    width: 100%;
+    display: none; 
+    margin: 0;
+  }
+  .nav-menu ul {
+    display: flex;
+    
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav-menu li a {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+  }
+  .hamburger{
+    display: block;
+  }
+  .nav-menu.active{
+   display: flex;
+   text-align: center;
+  }
+}
 </style>
