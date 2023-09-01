@@ -3,6 +3,7 @@ import {RouterLink} from "vue-router"
 import {onMounted, ref} from "vue";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import router from "../router";
+
 const isLoggedIn = ref(false);
 const userUID = ref(null);
 let auth;
@@ -131,8 +132,8 @@ a{
 
 .hamburger{
   position: absolute;
-  top: 2.7rem;
-  right: 1.6rem; 
+  top: 2.2rem;
+  right: 1.5rem; 
   display: flex;
   flex-direction: column;
   justify-content: space-around;

@@ -10,7 +10,8 @@ import {RouterLink} from "vue-router"
 <h2>Discover Delicious Recipes</h2>
 <h3>Explore a wide range of mouthwatering dishes that you can easily prepare in your kitchen.</h3>
 <div class="btn-container">
-<button class="action-btn" ><router-link to="/recipes">Get Cooking</router-link></button>
+ <!-- <router-link to="/recipes">Get Cooking</router-link> -->
+<router-link to="/recipes"><button>Get Cooking</button></router-link>
 </div>
         </div>
         <div class="hero-right">  <img class="hero-img" src="..//assets/cooking-animate.svg" alt="Cooking Image">
@@ -52,10 +53,12 @@ import {RouterLink} from "vue-router"
 
 /* section 2 */
 .section2{
-  padding: 30px;
+  padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 60px;
+  /* background: radial-gradient(circle at 50% 119%,#C6D565, #59bd67) */
 }
 .section2 h2{
   font-weight: bold;
@@ -67,8 +70,10 @@ import {RouterLink} from "vue-router"
   max-width: 90ch;
   display: flex;
   flex-direction: column;
+  
 }
 .card{
+  background-color: white;
 border: 1px solid;
 height: 250px;
 width: 200px;
@@ -111,6 +116,7 @@ transition: all 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(circle at 50% 119%,#C6D565, rgba(150, 244, 163, 1))
 }
 
 .hero-container{
@@ -132,38 +138,42 @@ transition: all 0.2s;
 .hero-left h3{
   margin-bottom: 30px;
   font-size: 15px;
+  font-weight: bold;
+  
 }
-.action-btn{
-  font-size: 15px;
-  padding: 8px 10px;
-  border: none;
-}
-.action-btn a{
+
+
+button {
   text-decoration: none;
   color: white;
+  
+  font-weight: bold;
+  letter-spacing: 0.6px;
+}
+button {
+ padding: 11px 20px;
+ text-decoration: none;
+
+ border-radius: 10px;
+ border: 0;
+ background-color: rgb(254, 73, 45);
+ letter-spacing: 1.5px;
+ font-size: 15px;
+ transition: all .3s ease;
+ box-shadow: rgb(173, 43, 23) 0px 10px 0px 0px;
+ color: hsl(0, 0%, 100%);
 }
 
-.action-btn {
-  padding: 8px 10px;
-  border: none;
-  font-size: 15px;
-  color: #fff;
-  border-radius: 7px;
-  font-weight: 700;
-  transition: 0.5s;
-  transition-property: box-shadow;
+button:hover {
+ box-shadow: rgb(173, 43, 23) 0px 7px 0px 0px;
 }
 
-.action-btn {
-  background: rgb(0,140,255);
-  box-shadow: 0 0 12px rgba(0, 140, 255, 0.26);
-}
-
-.action-btn:hover {
-  box-shadow: 0 0 5px rgba(0, 140, 255, 0.571),
-              0 0 12px rgba(0, 140, 255, 0.532),
-              0 0 20px rgba(0, 140, 255, 0.547),
-              0 0 35px rgba(0, 140, 255, 0.452);
+button:active {
+ background-color: rgb(254, 73, 45);
+ /*50, 168, 80*/
+ box-shadow: rgb(173, 43, 23) 0px 0px 0px 0px;
+ transform: translateY(5px);
+ transition: 200ms;
 }
 
 .hero-img {
