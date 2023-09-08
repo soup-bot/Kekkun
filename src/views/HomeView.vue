@@ -7,8 +7,8 @@ import {RouterLink} from "vue-router"
     <div class="hero-section">
       <div class="hero-container"> 
         <div class="hero-left">
-<h2>siscover Delicious Recipes</h2>
-<h3>Explore a wide range of mouthwatering dishes that you can easily prepare in your kitchen.</h3>
+<h2 class="bold" >Discover delicious recipes brought to you by fellow cooks!</h2>
+<h3 class="light">Explore a wide range of mouthwatering dishes that you can easily prepare in your kitchen.</h3>
 <div class="btn-container">
  <!-- <router-link to="/recipes">Get Cooking</router-link> -->
 <router-link to="/recipes"><button>Get Cooking</button></router-link>
@@ -129,16 +129,19 @@ transition: all 0.2s;
   padding-right: 50px;
 }
 .hero-left h2{
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.281);
   font-weight: bold;
-  margin-bottom: 12px;
-  font-size: 25px;
+  margin-bottom: 23px;
+  font-size: 24px;
   text-align: start;
   
 }
 .hero-left h3{
   margin-bottom: 30px;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 18px;
+  color: rgb(49, 52, 54);
+ 
   
 }
 
@@ -156,22 +159,22 @@ button {
 
  border-radius: 10px;
  border: 0;
- background-color: rgb(254, 73, 45);
+ background-color: rgb(255, 114, 94);
  letter-spacing: 1.5px;
  font-size: 15px;
  transition: all .3s ease;
- box-shadow: rgb(173, 43, 23) 0px 10px 0px 0px;
+ box-shadow: rgb(161, 83, 73) 0px 10px 0px 0px;
  color: hsl(0, 0%, 100%);
 }
 
 button:hover {
- box-shadow: rgb(173, 43, 23) 0px 7px 0px 0px;
+ box-shadow: rgb(161, 83, 73) 0px 10px 0px 0px;
 }
 
 button:active {
- background-color: rgb(254, 73, 45);
+ background-color: rgb(255, 114, 94);
  /*50, 168, 80*/
- box-shadow: rgb(173, 43, 23) 0px 0px 0px 0px;
+ box-shadow: rgb(161, 83, 73) 0px 10px 0px 0px;
  transform: translateY(5px);
  transition: 200ms;
 }

@@ -4,7 +4,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const auth = getAuth();
 const userUID = ref("");
-const showForm = ref("false");
+const showForm = ref(false);
 
 const recipeName = ref("");
 const ingredients = ref("");

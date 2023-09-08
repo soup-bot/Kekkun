@@ -12,10 +12,22 @@ import Footer from "./components/Footer.vue";
 
 </template>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.light{
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+.bold {
+  font-family: Robot, sans-serif;
+  font-weight: 700;
+}
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Roboto, sans-serif;
 }
 body {
   overflow-y: scroll; /* Always show scrollbar */
