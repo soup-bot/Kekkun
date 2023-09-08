@@ -7,7 +7,7 @@ import {RouterLink} from "vue-router"
     <div class="hero-section">
       <div class="hero-container"> 
         <div class="hero-left">
-<h2>Discover Delicious Recipes</h2>
+<h2>siscover Delicious Recipes</h2>
 <h3>Explore a wide range of mouthwatering dishes that you can easily prepare in your kitchen.</h3>
 <div class="btn-container">
  <!-- <router-link to="/recipes">Get Cooking</router-link> -->
