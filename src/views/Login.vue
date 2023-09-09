@@ -42,22 +42,9 @@ const register = () => {
   })
 };
 
-// const signInWithGoogle = () => {
-//   const provider = new GoogleAuthProvider();
-//   signInWithPopup(getAuth(), provider)
-//   .then((result)=>{
-//     console.log(result.user);
-//     router.push("/");
-//   })
-//   .catch((error)=>{
-//     console.log("ERROR");
-//   });
-// };
-
 const signInWithGoogle = () => {
   const provider = new GoogleAuthProvider();
   signInWithRedirect(auth, provider)
-  // router.push("/");
   
 }
 const login =() => {
@@ -113,7 +100,9 @@ const login =() => {
 body{
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow-y: hidden;
+  height: 100vh;
 }
 .container{
   border: 1px solid black;
