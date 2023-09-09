@@ -91,8 +91,8 @@ const resetQuery = () => {
 .search-x {
   width: 15px;
   position: absolute;
-  bottom: 22px;
-  right: 15px;
+  bottom: 26px;
+  right: 12px;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -166,10 +166,15 @@ body{
 text-align: center;
 
 }
+.img-container{
+  height: 50px;
+  overflow: hidden;
+}
 .card-img{
   max-width: 100%;
-  height: auto;
+  object-fit: fill;
   border-radius: 12px;
+  
   
 
 }

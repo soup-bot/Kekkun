@@ -79,6 +79,7 @@ li a {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  transition: all 1.2s;
 }
 .nav-menu ul{
   display: flex;

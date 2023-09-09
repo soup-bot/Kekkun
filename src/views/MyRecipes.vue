@@ -218,6 +218,11 @@ text-align: center;
 padding-top: 30px;
 
 }
+
+.img-container{
+  height: 50px;
+  overflow: hidden;
+}
 .card-img{
   max-width: 100%;
   height: auto;
