@@ -4,6 +4,7 @@ import router from "../router";
 import {onMounted, ref} from "vue";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
+const userUID = ref ("")
 const isLoggedIn = ref(false);
 let auth;
 
@@ -13,6 +14,7 @@ onMounted(()=> {
 if (user){
   isLoggedIn.value = true;
  userUID.value = user.uid;
+ console.log(userUID.value);
 } else{
   isLoggedIn.value = false;
  

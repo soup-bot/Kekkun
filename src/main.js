@@ -3,6 +3,9 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
@@ -14,11 +17,12 @@ const firebaseConfig = {
   appId: "1:62184803239:web:eec1bff791c6ce1f96c482",
   measurementId: "G-MNC6TFWK8T"
 };
-
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
 
-const app = createApp(App)
-app.use(router)
+const vueApp = createApp(App)
+vueApp.use(router)
 
-app.mount('#app')
+vueApp.mount('#app')

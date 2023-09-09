@@ -33,6 +33,11 @@ const router = createRouter({
         requiresAuth: true,
       }
     },
+    {
+      path: '/recipe/:id', // Use a dynamic route parameter for recipe ID
+      name: 'recipedetails',
+      component: () => import('../views/RecipeDetails.vue'),
+    },
   ]
 })
 
