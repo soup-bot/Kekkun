@@ -5,6 +5,7 @@ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
   GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged
 } from "firebase/auth";
 
+const auth = getAuth();
 const email = ref("");
 const password = ref("");
 const errMsg = ref();
@@ -14,19 +15,21 @@ const registerbox = ref(true);
 const loginbox = ref(false);
 
 
-// onMounted(() => {
-//   onAuthStateChanged(auth, (user) => {
-//     if (user) {
-//       isLoggedIn.value = true;
-//       if (router.currentRoute.value.path === "/login") {
-//         router.push("/"); // Redirect to the home page or a different route
-//       }
-//     } else {
-//       isLoggedIn.value = false;
-//     }
-//   });
+onMounted(() => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      isLoggedIn.value = true;
+      if (router.currentRoute.value.path === "/login") {
+        router.push("/"); // Redirect to the home page or a different route
+      }
+    } else {
+      isLoggedIn.value = false;
+    }
+  });
+  var user = auth.currentUser;
+});
 
-// });
+
 const register = () => {
   createUserWithEmailAndPassword(getAuth(), email.value, password.value)
   .then((data)=> {
@@ -39,24 +42,24 @@ const register = () => {
   })
 };
 
-const signInWithGoogle = () => {
-  const provider = new GoogleAuthProvider();
-  signInWithPopup(getAuth(), provider)
-  .then((result)=>{
-    console.log(result.user);
-    router.push("/");
-  })
-  .catch((error)=>{
-    console.log("ERROR");
-  });
-};
-
 // const signInWithGoogle = () => {
 //   const provider = new GoogleAuthProvider();
-//   signInWithRedirect(auth, provider)
-//   router.push("/");
+//   signInWithPopup(getAuth(), provider)
+//   .then((result)=>{
+//     console.log(result.user);
+//     router.push("/");
+//   })
+//   .catch((error)=>{
+//     console.log("ERROR");
+//   });
+// };
+
+const signInWithGoogle = () => {
+  const provider = new GoogleAuthProvider();
+  signInWithRedirect(auth, provider)
+  // router.push("/");
   
-// }
+}
 const login =() => {
   signInWithEmailAndPassword(getAuth(), email.value, password.value)
   .then((data)=> {

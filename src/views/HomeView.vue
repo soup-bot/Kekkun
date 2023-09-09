@@ -10,7 +10,6 @@ import {RouterLink} from "vue-router"
 <h2 class="bold" >Discover delicious recipes brought to you by fellow cooks!</h2>
 <h3 class="light">Explore a wide range of mouthwatering dishes that you can easily prepare in your kitchen.</h3>
 <div class="btn-container">
- <!-- <router-link to="/recipes">Get Cooking</router-link> -->
 <router-link to="/recipes"><button>Get Cooking</button></router-link>
 </div>
         </div>
