@@ -1,19 +1,20 @@
 <script setup>
 import {RouterLink} from "vue-router"
+import 'animate.css';
 </script>
 
 <template>
   <main>
     <div class="hero-section">
       <div class="hero-container"> 
-        <div class="hero-left">
+        <div class="hero-left animate__animated animate__bounceInLeft">
 <h2 class="bold" >Discover delicious recipes brought to you by fellow cooks!</h2>
 <h3 class="light">Explore a wide range of mouthwatering dishes that you can easily prepare in your kitchen.</h3>
 <div class="btn-container">
 <router-link to="/recipes"><button>Get Cooking</button></router-link>
 </div>
         </div>
-        <div class="hero-right">  <img class="hero-img" src="..//assets/cooking-animate.svg" alt="Cooking Image">
+        <div class="hero-right animate__animated animate__bounceInRight">  <img class="hero-img" src="..//assets/cooking-animate.svg" alt="Cooking Image">
         </div>
       
       </div>
@@ -21,7 +22,7 @@ import {RouterLink} from "vue-router"
 
   </div>
 
-  <div class="section2">
+  <div class="section2 animate__animated animate__fadeInUpBig">
     <div class="section2-container">
      <h2 class="section2-title">How it works</h2>
     

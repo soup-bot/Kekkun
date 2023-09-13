@@ -34,19 +34,8 @@ signOut(auth).then(()=>{
 <template>
   <div class="nav">
 <router-link to="/"><img src="../images/logo.png" class="logo"/></router-link>
-<!-- <div class="links">
-<router-link active-class="active" to="/">Home</router-link>
-<router-link active-class="active" to="/about">About</router-link>
-<router-link active-class="active" to="/recipes">Recipes</router-link>
-<router-link active-class="active" to="/myrecipes" v-if="isLoggedIn">My Recipes</router-link>
-</div> -->
 
 <img class="hamburger" src="../images/hamburger.svg" alt="" @click="showMobileMenu = !showMobileMenu">
-<!-- <div class="hamburger">  
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
- </div> -->
  <div :class="{ active: showMobileMenu }" class="nav-menu">
 <ul>
   <li class="nav-item"><router-link @click="showMobileMenu = !showMobileMenu" class="nav-link" active-class="active" to="/">Home</router-link></li>

@@ -153,6 +153,7 @@ body{
   display: flex;
   gap: 20px;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 .card{
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.219);
@@ -208,6 +209,13 @@ margin-bottom: 12px;
 .search-x{
   bottom: 26px;
   right: 9px;
+}
+
+.card-container{
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  padding-bottom: 50px;
 }
 }
 /* recipe cards end */

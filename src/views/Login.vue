@@ -5,6 +5,7 @@ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
   GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged
 } from "firebase/auth";
 
+
 const auth = getAuth();
 const email = ref("");
 const password = ref("");
@@ -91,6 +92,9 @@ const login =() => {
 <p><button class="loginbtn" v-if="registerbox" @click="register">Register</button></p>
 <p><button class="loginbtn" v-if="loginbox" @click="login">Login</button></p>
 <p><button class="google-btn" @click="signInWithGoogle"><img class="google" src="../images/google.svg" alt=""> Sign in With Google</button></p>
+
+
+
 </div>
 
 </body>
